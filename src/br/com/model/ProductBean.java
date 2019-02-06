@@ -72,4 +72,9 @@ public class ProductBean {
 
 		mistakes.put(key, message);
 	}
+	
+	@Override
+	public String toString() {
+		return id+"-"+name+"-"+price;
+	}
 }
