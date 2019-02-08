@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="hsqldb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache Tomcat v7.0 [Apache Tomcat v7.0]"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
