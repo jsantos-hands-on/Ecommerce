@@ -24,6 +24,7 @@ import="br.com.model.ProductBean"
 			<br />
 			<input type="submit" value="Save"/>
 			<input type="reset" value="Clean">
+			<input type="submit" value="Back" formaction="index.html">
 		</form>
 	</body>
 </html>

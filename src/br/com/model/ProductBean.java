@@ -75,6 +75,6 @@ public class ProductBean {
 	
 	@Override
 	public String toString() {
-		return id+"-"+name+"-"+price;
+		return name+"-"+price;
 	}
 }

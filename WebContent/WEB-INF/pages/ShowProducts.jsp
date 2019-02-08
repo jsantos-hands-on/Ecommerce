@@ -12,8 +12,14 @@ pageEncoding="UTF-8"
 	</head>
 	<body>
 		<c:forEach items="${products}" var="product">
-		${product}
-		<br />
+			<form method="post">
+				${product}
+				<input type="hidden" name="id" value="${product.id}" />
+				<input type="submit" value="Edit" formaction="controller?UpdateProduct" />
+				<input type="submit" value="Remove" formaction="controller?DeleteProduct" />
+			</form>
+			<br />
 		</c:forEach>
+		<input type="button" value="Back" onClick="history.go(-1)">
 	</body>
 </html>
