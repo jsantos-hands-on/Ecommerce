@@ -22,9 +22,10 @@ public class ProductDAO {
 	public boolean insert(ProductBean product) throws SQLException {
 
 		boolean flag = false;
+		String query = "INSERT INTO product(name, price) values(?, ?)";
 
 		try (PreparedStatement statement = connection
-				.prepareStatement("INSERT INTO product(name, price) values(?, ?)")) {
+				.prepareStatement(query)) {
 			statement.setString(1, product.getName());
 			statement.setDouble(2, Double.parseDouble(product.getPrice()));
 			flag = !statement.execute();
@@ -36,8 +37,9 @@ public class ProductDAO {
 	public List<ProductBean> selectAll() throws SQLException {
 
 		List<ProductBean> products = new ArrayList<>();
+		String query = "SELECT * FROM product";
 
-		try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM product")) {
+		try (PreparedStatement statement = connection.prepareStatement(query)) {
 
 			if (statement.execute()) {
 
@@ -61,6 +63,21 @@ public class ProductDAO {
 		}
 
 		return products;
+	}
+
+	public boolean Update(ProductBean product) throws SQLException {
+
+		boolean flag = false;
+		String query = "UPDATE product SET name=?, price=? WHERE id=?";
+		
+		try(PreparedStatement statement = connection.prepareStatement(query)){
+			statement.setString(1, product.getName());
+			statement.setString(2, product.getPrice());
+			statement.setInt(3, product.getId());
+			flag = !statement.execute();
+		}
+		
+		return flag;
 	}
 
 }

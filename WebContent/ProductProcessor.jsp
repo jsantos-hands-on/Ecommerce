@@ -16,14 +16,16 @@ import="br.com.model.ProductBean"
 	</head>
 	<body>
 		<jsp:useBean id="product" class="br.com.model.ProductBean" scope="request">
+			<jsp:setProperty name="product" property="id"/>
 			<jsp:setProperty name="product" property="name"/>
 			<jsp:setProperty name="product" property="price"/>
 		</jsp:useBean>
 		
 		<c:if test="${product.isValid()}">
-			<jsp:forward page="controller">
-				<jsp:param value="RegisterProduct" name="taskName"/>
-			</jsp:forward>
+			<c:if test='<%= request.getParameter("taskName") != null %>'>
+				<jsp:forward page="controller" />
+			</c:if>
+			<jsp:forward page="ProductFormRetry.jsp" />
 		</c:if>
 		
 		<jsp:forward page="ProductFormRetry.jsp" />
