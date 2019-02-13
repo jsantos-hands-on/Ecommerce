@@ -19,10 +19,10 @@ import="br.com.model.ProductBean"
 				<input type="hidden" name="name" value="${product.name}" />
 				<input type="hidden" name="price" value="${product.price}" />
 				<input type="submit" value="Edit" formaction="ProductProcessor.jsp" />
-				<input type="submit" value="Remove" formaction="controller?DeleteProduct" />
+				<input type="submit" value="Remove" formaction="controller?taskName=DeleteProduct" />
 			</form>
 			<br />
 		</c:forEach>
-		<input type="button" value="Back" onClick="history.go(-1)">
+		<a href="index.html"> Home page</a>
 	</body>
 </html>

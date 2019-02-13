@@ -2,7 +2,6 @@ package br.com.web;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,21 +10,28 @@ import br.com.dao.ConnectionPool;
 import br.com.dao.ProductDAO;
 import br.com.model.ProductBean;
 
-public class ShowProducts implements Task {
+public class CreatProduct implements Task {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 
-		try(Connection connection = new ConnectionPool().getConnection()){
+		ProductBean product = (ProductBean) req.getAttribute("product");
+
+		boolean flag = false;
+
+		try (Connection connection = new ConnectionPool().getConnection()) {
 
 			ProductDAO productDAO = new ProductDAO(connection);
-			List<ProductBean> products = productDAO.selectAll();
-			
-			req.setAttribute("products", products);
+			flag = productDAO.insert(product);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-			return "/WEB-INF/pages/ShowProducts.jsp";
+
+		if (flag) {
+			return "controller?taskName=ReadProduct";
+		}
+		return "/WEB-INF/pages/ErrorPage.jsp";
 	}
 
 }

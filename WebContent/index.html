@@ -4,8 +4,10 @@
 	</head>
 	<body>
 	<h1>Welcome to the Brines shop!</h1>
-	<a href="controller?taskName=ShowProducts">Show products...</a>
-	<br />
-	<a href="ProductForm.html">Register a product</a>
+	<form>
+		<input type="hidden" name="taskName" value="ReadProduct" />
+		<input type="submit" value="Show" formaction="controller"/>
+		<input type="submit" value="Register" formaction="productForm.html"/>
+	</form>
 	</body>
 </html>
