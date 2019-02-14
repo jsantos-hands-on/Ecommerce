@@ -2,6 +2,7 @@
 language="java"
 contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
+import="br.com.model.ProductBean"
 %>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -18,10 +19,10 @@ pageEncoding="UTF-8"
 				<input type="hidden" name="name" value="${product.name}" />
 				<input type="hidden" name="price" value="${product.price}" />
 				<input type="submit" value="Edit" formaction="ProductProcessor.jsp" />
-				<input type="submit" value="Remove" formaction="controller?DeleteProduct" />
+				<input type="submit" value="Remove" formaction="controller?taskName=DeleteProduct" />
 			</form>
 			<br />
 		</c:forEach>
-		<input type="button" value="Back" onClick="history.go(-1)">
+		<a href="index.html"> Home page</a>
 	</body>
 </html>

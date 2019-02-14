@@ -11,7 +11,7 @@ import br.com.dao.ConnectionPool;
 import br.com.dao.ProductDAO;
 import br.com.model.ProductBean;
 
-public class ShowProducts implements Task {
+public class ReadProduct implements Task {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -25,7 +25,7 @@ public class ShowProducts implements Task {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-			return "/WEB-INF/pages/ShowProducts.jsp";
+			return "/WEB-INF/pages/ProductShow.jsp";
 	}
 
 }

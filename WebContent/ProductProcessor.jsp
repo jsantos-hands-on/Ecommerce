@@ -22,10 +22,14 @@ import="br.com.model.ProductBean"
 		</jsp:useBean>
 		
 		<c:if test="${product.isValid()}">
-			<c:if test='<%= request.getParameter("taskName") != null %>'>
-				<jsp:forward page="controller" />
-			</c:if>
-			<jsp:forward page="ProductFormRetry.jsp" />
+			<c:choose>
+				<c:when test='<%= request.getParameter("taskName") != null %>'>
+					<jsp:forward page="controller" />
+				</c:when>
+				<c:when test='<%= product.getId() == -1 %>'>
+					<jsp:forward page="controller?taskName=CreatProduct" />
+				</c:when>
+			</c:choose>
 		</c:if>
 		
 		<jsp:forward page="ProductFormRetry.jsp" />

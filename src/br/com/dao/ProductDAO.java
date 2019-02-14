@@ -24,8 +24,7 @@ public class ProductDAO {
 		boolean flag = false;
 		String query = "INSERT INTO product(name, price) values(?, ?)";
 
-		try (PreparedStatement statement = connection
-				.prepareStatement(query)) {
+		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setString(1, product.getName());
 			statement.setDouble(2, Double.parseDouble(product.getPrice()));
 			flag = !statement.execute();
@@ -69,14 +68,27 @@ public class ProductDAO {
 
 		boolean flag = false;
 		String query = "UPDATE product SET name=?, price=? WHERE id=?";
-		
-		try(PreparedStatement statement = connection.prepareStatement(query)){
+
+		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setString(1, product.getName());
 			statement.setString(2, product.getPrice());
 			statement.setInt(3, product.getId());
 			flag = !statement.execute();
 		}
-		
+
+		return flag;
+	}
+
+	public boolean delete(String id) throws SQLException {
+
+		boolean flag = false;
+		String query = "DELETE FROM product where id=?";
+
+		try (PreparedStatement statement = connection.prepareStatement(query)) {
+			statement.setString(1, id);
+			flag = !statement.execute();
+		}
+
 		return flag;
 	}
 

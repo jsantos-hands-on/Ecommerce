@@ -19,6 +19,7 @@ import="br.com.model.ProductBean"
 		<h1>Product registration!</h1>
 		<form method="post">
 		
+			<input type="hidden" name="id" value="${product.id}"/>
 			Name: <input type="text" name="name" value="${product.name}"/>
 			<%=product.getMistakes("name")%>
 			<br />
@@ -26,10 +27,10 @@ import="br.com.model.ProductBean"
 			<%=product.getMistakes("price")%>
 			<br />
 			<c:if test="${product.id == -1}">
-				<input type="submit" value="Save" formaction="ProductProcessor.jsp?taskName=RegisterProduct"/>
+				<input type="submit" value="Save" formaction="ProductProcessor.jsp?taskName=CreatProduct"/>
 			</c:if>
 			<c:if test="${product.id != -1}">
-				<input type="submit" value="Save" formaction="ProductProcessor.jsp?taskName=UpdaterProduct"/>
+				<input type="submit" value="Save" formaction="ProductProcessor.jsp?taskName=UpdateProduct"/>
 			</c:if>
 				<input type="reset" value="Clean">
 			<input type="submit" value="Back" formaction="index.html">
