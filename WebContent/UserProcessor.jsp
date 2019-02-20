@@ -24,7 +24,7 @@ import="br.com.model.UserBean"
 		</jsp:useBean>
 		
 		<c:if test="${user.isValid()}">
-			<jsp:forward page="/WEB-INF/pages/sucess.html" />
+			<jsp:forward page="controller?taskName=CreatUser" />
 		</c:if>
 			<jsp:forward page="UserFormRetry.jsp" />
 	</body>
