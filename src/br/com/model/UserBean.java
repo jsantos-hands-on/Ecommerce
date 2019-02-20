@@ -55,7 +55,6 @@ public class UserBean {
 		this.name = name;
 	}
 
-<<<<<<< HEAD
 	public String getDateBirth() {
 		return dateBirth;
 	}
@@ -77,22 +76,6 @@ public class UserBean {
 			else
 				this.gender = Gender.FEMALE;
 		}
-=======
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
->>>>>>> 66201c5afa3d3c4df1f7b122a0d1941b9d365d91
 	}
 
 	public String getMistakes(String key) {
@@ -107,7 +90,6 @@ public class UserBean {
 	}
 
 	public boolean isValid() {
-<<<<<<< HEAD
 		boolean flag = true;
 
 		Field[] fields = this.getClass().getDeclaredFields();
@@ -138,14 +120,6 @@ public class UserBean {
 				}
 			}
 		}
-=======
-		boolean flag = false;
-		 Field[] fields = UserBean.this.getClass().getDeclaredFields();
-		 for (Field field : fields) {
-			System.out.println(fields.toString());
-		}
-		
->>>>>>> 66201c5afa3d3c4df1f7b122a0d1941b9d365d91
 		return flag;
 	}
 }
