@@ -2,7 +2,6 @@
 language="java"
 contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
-import="br.com.model.UserBean"
 %>
 
 <jsp:useBean id="user" class="br.com.model.UserBean" scope="request" />

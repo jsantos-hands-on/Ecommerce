@@ -4,6 +4,8 @@ contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
 %>
 
+<jsp:useBean id="user" class="br.com.model.UserBean" scope="request"/>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +14,7 @@ pageEncoding="UTF-8"
 	</head>
 	<body>
 		<h1>User registration form:</h1>
+		<%=user.getMistakes("result")%>		
 		<form action="UserProcessor.jsp" method="post">
 			Login: <input type="text" name="login"/>
 			<br/>

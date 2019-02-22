@@ -35,7 +35,7 @@ public class CreatUser implements Task {
 			user.setMistakes("result", "The user creat with sucess!");
 			return "formUser.jsp";
 		} else {
-			user.setMistakes("result", "The user" + user.getLogin() + "already exist!");
+			user.setMistakes("result", "The user " + user.getLogin() + " already exist!");
 			return "UserFormRetry.jsp";
 		}
 	}

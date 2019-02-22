@@ -25,11 +25,11 @@ public class UserDAO {
 
 		if (this.select(newUser.getLogin()) == null) {
 
+			System.out.println("executing statement!");
+
 			String query = "INSERT INTO user(login, password, name, dateBirth, gender) values(?, ?, ?, ?, ?)";
 
 			try (PreparedStatement statement = connection.prepareStatement(query)) {
-
-				statement.execute(query);
 
 				statement.setString(1, newUser.getLogin());
 				statement.setString(2, newUser.getPassword());
@@ -73,12 +73,13 @@ public class UserDAO {
 						user.setName(userName);
 						user.setDateBirth(userDateBirth);
 						user.setGender(userGender);
-
+						System.out.println("return user!");
 						return user;
 					}
 				}
 			}
 		}
+		System.out.println("return null!");
 		return null;
 	}
 }
