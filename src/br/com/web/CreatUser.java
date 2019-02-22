@@ -11,6 +11,7 @@ import br.com.dao.ConnectionPool;
 import br.com.dao.UserDAO;
 import br.com.model.UserBean;
 
+
 public class CreatUser implements Task {
 
 	@Override
@@ -24,7 +25,7 @@ public class CreatUser implements Task {
 			UserDAO userDAO = new UserDAO(connection);
 
 			flag = userDAO.insert(user);
-
+      
 		} catch (SQLException | ParseException e) {
 
 			e.printStackTrace();
