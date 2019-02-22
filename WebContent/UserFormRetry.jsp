@@ -15,6 +15,7 @@ import="br.com.model.UserBean"
 	</head>
 	<body>
 		<h1>User registration form:</h1>
+		<%=user.getMistakes("result")%>
 		<form action="UserProcessor.jsp" method="post">
 			Login: <input type="text" name="login" value="${user.login}"/>
 			<%=user.getMistakes("login")%>
