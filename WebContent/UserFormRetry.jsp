@@ -31,8 +31,8 @@ pageEncoding="UTF-8"
 			<br/>
 			Gender
 			<br/> 
-			male<input type="radio" name="gender" value="male"/>
-			female<input type="radio" name="gender" value="female"/>
+			male<input type="radio" name="gender" value="male" ${user.getGender().equals("male") ? "checked" : ""}/>
+			female<input type="radio" name="gender" value="female" ${user.getGender().equals("female") ? "checked" : ""}/>
 			<%=user.getMistakes("gender")%>
 			<br/>
 			<input type="submit" value="Save"/>
