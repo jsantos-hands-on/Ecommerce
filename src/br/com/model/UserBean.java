@@ -122,4 +122,39 @@ public class UserBean {
 		}
 		return flag;
 	}
+
+	public boolean passIsValid() {
+
+		Validator validator = new Validator(this.password);
+
+		if (this.password.length() >= 6) {
+			if (validator.hasAlphabetic()) {
+				if (validator.hasDigit()) {
+					if (validator.hasUpperCase()) {
+						if (validator.hasSpecialCharacters()) {
+							return true;
+						} else {
+							this.mistakes.put("password", "The password must be at least one special character");
+						}
+
+					} else {
+						this.mistakes.put("password", "The password must be at least one uppercase letter");
+					}
+
+				} else {
+					this.mistakes.put("password", "The password must be at least one numeric character");
+				}
+
+			} else {
+				this.mistakes.put("password", "The password must be at least one letter");
+				return false;
+			}
+
+		} else {
+			this.mistakes.put("password", "The password must be at least six characters");
+			return false;
+		}
+		
+		return true;
+	}
 }

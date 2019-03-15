@@ -31,6 +31,7 @@ pageEncoding="UTF-8"
 			female<input type="radio" name="gender" value="female"/>
 			<br/>
 			<input type="submit" value="Save"/>
+			<input type="submit" value="Back" formaction="index.html">
 		</form>
 	</body>
 </html>
