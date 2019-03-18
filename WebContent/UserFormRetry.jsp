@@ -36,6 +36,7 @@ pageEncoding="UTF-8"
 			<%=user.getMistakes("gender")%>
 			<br/>
 			<input type="submit" value="Save"/>
+			<input type="submit" value="Back" formaction="index.jsp">
 		</form>
 	</body>
 </html>
