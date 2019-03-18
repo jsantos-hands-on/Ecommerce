@@ -23,6 +23,6 @@ import="br.com.model.ProductBean"
 			</form>
 			<br />
 		</c:forEach>
-		<a href="index.html"> Home page</a>
+		<a href="index.jsp"> Home page</a>
 	</body>
 </html>

@@ -33,7 +33,7 @@ import="br.com.model.ProductBean"
 				<input type="submit" value="Save" formaction="ProductProcessor.jsp?taskName=UpdateProduct"/>
 			</c:if>
 				<input type="reset" value="Clean">
-			<input type="submit" value="Back" formaction="index.html">
+			<input type="submit" value="Back" formaction="index.jsp">
 		</form>
 	</body>
 </html>
