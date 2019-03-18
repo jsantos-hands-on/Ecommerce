@@ -48,7 +48,7 @@ public class UserDAO {
 		return flag;
 	}
 
-	private UserBean select(String login) throws SQLException {
+	public UserBean select(String login) throws SQLException {
 
 		String query = "SELECT * FROM user WHERE login=?";
 
