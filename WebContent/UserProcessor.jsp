@@ -23,7 +23,9 @@ pageEncoding="UTF-8"
 		</jsp:useBean>
 		
 		<c:if test="${user.isValid()}">
-			<jsp:forward page="controller?taskName=CreatUser" />
+			<c:if test="${user.passIsValid()}">
+				<jsp:forward page="controller?taskName=CreatUser" />
+			</c:if>
 		</c:if>
 			<jsp:forward page="UserFormRetry.jsp" />
 	</body>

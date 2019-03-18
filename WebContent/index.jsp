@@ -9,7 +9,9 @@
 	<form>
 		<input type="hidden" name="taskName" value="ReadProduct" />
 		<input type="submit" value="Show" formaction="controller"/>
-		<input type="submit" value="Register" formaction="formProduct.html"/>
+		<br/>
+		<input type="submit" value="Register product" formaction="formProduct.html"/>
+		<input type="submit" value="Register user" formaction="formUser.jsp"/>
 	</form>
 	</body>
 </html>
