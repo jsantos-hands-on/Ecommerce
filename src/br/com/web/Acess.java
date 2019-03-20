@@ -43,11 +43,6 @@ public class Acess implements Task {
 
 		}
 
-<<<<<<< HEAD
 		return "index.jsp";
-=======
-		return "user.jsp";
->>>>>>> d0b4e8f6c0947d2e97daf4ecb40fb4dff4f0c66c
 	}
-
 }
