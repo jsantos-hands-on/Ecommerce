@@ -22,11 +22,30 @@ pageEncoding="UTF-8"
 			<jsp:setProperty name="user" property="gender" />
 		</jsp:useBean>
 		
-		<c:if test="${user.isValid()}">
-			<c:if test="${user.passIsValid()}">
-				<jsp:forward page="controller?taskName=CreatUser" />
-			</c:if>
-		</c:if>
+		<c:choose>
+			<c:when test='<%=request.getParameter("taskName").equals("CreatUser")%>'>
+				<c:if test="${user.isValid()}">
+					<c:if test="${user.passIsValid()}">
+						<jsp:forward page="controller?taskName=CreatUser" />
+					</c:if>
+				</c:if>
+			</c:when>
+			<c:otherwise>
+				<c:if test='<%=request.getParameter("password").equals(user.getPassword())%>'>
+					<c:choose>
+						<c:when test="${user.isValid()}">
+							<jsp:forward page="user.jsp?taskName=CreatUser" />
+						</c:when>
+						<c:otherwise>
+							<jsp:forward page="UserFormRetry.jsp" />
+						</c:otherwise>
+					</c:choose>
+				</c:if>
+				<%user.setMistakes("password", "Wrong password!");%>
+				<jsp:forward page="UserFormRetry.jsp?taskName=UpdateUser" />
+			</c:otherwise>
+		</c:choose>
+		
 			<jsp:forward page="UserFormRetry.jsp" />
 	</body>
 </html>

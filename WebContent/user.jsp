@@ -6,9 +6,11 @@
 <meta charset="ISO-8859-1">
 <title>User</title>
 </head>
-<body>
-
-${user.name}
-
-</body>
+	<body>
+		<%=request.getParameter("taskName")%>
+		<br/>
+		${user.login}
+		<br/>
+		${user.name}
+	</body>
 </html>

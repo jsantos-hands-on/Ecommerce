@@ -9,12 +9,10 @@ public class UpdateUser implements Task{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		
 		HttpSession session = req.getSession();
 		req.setAttribute("user", session.getAttribute("user"));
 		
-		
-		return "UserFormRetry.jsp";
+		return "UserFormRetry.jsp?taskName=UpdateUser";
 	}
 
 }
