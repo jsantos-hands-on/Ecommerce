@@ -3,6 +3,6 @@
 	<head>
 	</head>
 	<body>
-		<h1>Product register with fail!</h1>
+		<h1>Operation fail!</h1>
 	</body>
 </html>

@@ -15,7 +15,7 @@ pageEncoding="UTF-8"
 	<body>
 		<h1>User registration form:</h1>
 		<%=user.getMistakes("result")%>		
-		<form action="UserProcessor.jsp" method="post">
+		<form action="UserProcessor.jsp?taskName=CreatUser" method="post">
 			Login: <input type="text" name="login"/>
 			<br/>
 			Password: <input type="password" name="password"/>
