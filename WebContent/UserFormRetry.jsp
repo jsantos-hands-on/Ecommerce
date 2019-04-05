@@ -22,7 +22,6 @@ pageEncoding="UTF-8"
 			Login: <input type="text" name="login" value="${user.login}"/>
 			<%=user.getMistakes("login")%>
 			<br/>
-			
 			<c:if test='<%=!request.getParameter("taskName").equals("EditUser")%>'>
 			<input type="hidden" name="taskName" value="CreatUser" />
 			Password: <input type="password" name="password" value="${user.password}"/>
