@@ -82,4 +82,29 @@ public class UserDAO {
 		System.out.println("return null!");
 		return null;
 	}
+
+	public boolean update(UserBean user) throws SQLException, ParseException {
+
+		boolean flag = false;
+		
+		String query = "UPDATE user SET login=?, name=?, datebirth=?, gender=? WHERE id=?";
+		
+		try(PreparedStatement statement = connection.prepareStatement(query)){
+			statement.setString(1, user.getLogin());
+			statement.setString(2, user.getName());
+			
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = format.parse(user.getDateBirth());
+			java.sql.Date dateSql = new java.sql.Date(date.getTime());
+			statement.setDate(3, dateSql);
+			
+			statement.setString(4, user.getGender());
+			
+			statement.setInt(5, user.getId());
+			
+			flag = !statement.execute();
+			
+		}
+		return flag;
+	}
 }

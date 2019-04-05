@@ -22,8 +22,7 @@ pageEncoding="UTF-8"
 			Login: <input type="text" name="login" value="${user.login}"/>
 			<%=user.getMistakes("login")%>
 			<br/>
-			
-			<c:if test='<%=!request.getParameter("taskName").equals("UpdateUser")%>'>
+			<c:if test='<%=!request.getParameter("taskName").equals("EditUser")%>'>
 			<input type="hidden" name="taskName" value="CreatUser" />
 			Password: <input type="password" name="password" value="${user.password}"/>
 			<%=user.getMistakes("password")%>
@@ -43,9 +42,13 @@ pageEncoding="UTF-8"
 			female<input type="radio" name="gender" value="female" ${user.getGender().equals("female") ? "checked" : ""}/>
 			<%=user.getMistakes("gender")%>
 			<br/>
-			<c:if test='<%=request.getParameter("taskName").equals("UpdateUser")%>'>
+			<c:if test='<%=request.getParameter("taskName").equals("EditUser")%>'>
 				<input type="hidden" name="taskName" value="UpdateUser" />
-				Password: <input type="password" name="password" />
+				<input type="hidden" name="id" value="${user.id}">
+				<input type="hidden" name="password" value="${user.password}"/>
+				<%=user.getMistakes("password")%>
+				<br/>
+				Password: <input type="password" name="tipedPassword" />
 			</c:if>
 			<input type="submit" value="Save"/>
 			<input type="submit" value="Back" formaction="index.jsp">
