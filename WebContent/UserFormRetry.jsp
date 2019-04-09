@@ -50,6 +50,9 @@ pageEncoding="UTF-8"
 				<br/>
 				Password: <input type="password" name="tipedPassword" />
 			</c:if>
+			<br />
+			<input type="submit" value="Edit password" formaction="NewPasswordForm.jsp">
+			<br />
 			<input type="submit" value="Save"/>
 			<input type="submit" value="Back" formaction="index.jsp">
 		</form>

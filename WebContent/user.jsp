@@ -7,10 +7,10 @@
 <title>User</title>
 </head>
 	<body>
-		<%=request.getParameter("taskName")%>
-		<br/>
 		${user.login}
 		<br/>
 		${user.name}
+		<br/>
+		${user.password}
 	</body>
 </html>
