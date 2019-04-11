@@ -13,7 +13,6 @@ pageEncoding="UTF-8"
 	<title>New password...</title>
 	</head>
 	<body>
-		<%request.setAttribute("user", user);%>
 		<form action="controller?taskName=EditUser" method="post">
 			<%=user.getMistakes("password")%>
 			<input type="hidden" name="taskKey" value="password" />
