@@ -92,4 +92,33 @@ public class ProductDAO {
 		return flag;
 	}
 
+	public List<ProductBean> selectByprice(String price) throws SQLException {
+
+		String sql = "SELECT * FROM product WHERE price > ?";
+		List<ProductBean> products = new ArrayList<>();
+		double priceAsDouble = Double.parseDouble(price);
+
+		try (PreparedStatement statement = connection.prepareStatement(sql)) {
+			statement.setDouble(1, priceAsDouble);
+
+			if (statement.execute()) {
+				try (ResultSet rs = statement.getResultSet()) {
+					while (rs.next()) {
+						int productId = rs.getInt("id");
+						String productName = rs.getString("name");
+						Double productPrice = rs.getDouble("price");
+
+						ProductBean product = new ProductBean();
+						product.setId(productId);
+						product.setName(productName);
+						product.setPrice(String.valueOf(productPrice));
+						products.add(product);
+					}
+				}
+			}
+		}
+
+		return products;
+	}
+
 }
